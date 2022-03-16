@@ -32,8 +32,9 @@ public class Model {
 		if(!tentativoValido(tentativo))
 			throw new InvalidParameterException("Devi inserire un numero tra 1 e " +NMAX+ " che non hai mai utilizzato");
 		
-		this.tentativi.add(tentativo);
+		
 		this.tentativiFatti++;
+		this.tentativi.add(tentativo);
 		
 		if(this.tentativiFatti == TMAX) {
 			this.inGioco = false;
@@ -52,8 +53,8 @@ public class Model {
 
 	private boolean tentativoValido(int tentativo) {
 		if(tentativo < 1 || tentativo > NMAX || tentativi.contains(tentativo))
-			return true;
-		return false;
+			return false;
+		return true;
 	}
 
 	public int getSegreto() {
