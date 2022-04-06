@@ -15,20 +15,20 @@ public class EntryPoint extends Application {
     @Override
     public void start(Stage stage) throws Exception {
     	
-    	Model model = new Model();
-    	FXMLController controller;
+    	Model model = new Model(); //pattern
+    	FXMLController controller; //pattern
     	
-    	FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Scene.fxml"));
+    	FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Scene.fxml")); //pattern
     	
-    	Parent root = loader.load();
+    	Parent root = loader.load(); //pattern
        // Parent root = FXMLLoader.load(getClass().getResource("/fxml/Scene.fxml"));
         
         Scene scene = new Scene(root);
         scene.getStylesheets().add("/styles/Styles.css");
         scene.getRoot().setStyle("-fx-font-family: 'serif'");
         
-        controller = loader.getController();
-        controller.setModel(model);
+        controller = loader.getController(); //pattern
+        controller.setModel(model);  //pattern
 
         stage.setTitle("JavaFX and Maven");
         stage.setScene(scene);
